@@ -7,6 +7,9 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
+
+
+	<div id="list-pickup" class="content scaffold-list" role="main">
 	<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 		<div class="nav" role="navigation">
 			<fieldset class ="buttons">
@@ -14,7 +17,6 @@
 				<h3></h3>
 		</fieldset>
 		</div>
-		<div id="list-pickup" class="content scaffold-list" role="main">
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
