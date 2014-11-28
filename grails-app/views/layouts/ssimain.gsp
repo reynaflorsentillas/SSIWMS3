@@ -17,7 +17,7 @@
     <g:layoutHead/>
 </head>
 <body>
-kevin pogi
+kevin pogi!
 <div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a></div>
 <g:layoutBody/>
 <div class="footer" role="contentinfo"></div>
