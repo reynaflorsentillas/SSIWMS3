@@ -6,17 +6,19 @@ class Retrieval {
     String departmentCode
     String address
     Date requestDate
-    Integer contactNumber
+    String contactNumber
     Date deliveryDate
+    String rush
 
-    static hasMany =[items:Item]
+    static hasMany =[pickList:PickLIst]
     static constraints = {
-        companyName(nullable: false)
-        requesterName(nullable: false)
-        departmentCode(nullable: false)
-        address(nullable: false)
-        requestDate(nullable: false, format: "dd/mm/yyyy")
-        contactNumber(nullable: false)
-        deliveryDate(nullable: false)
+        companyName()
+        requesterName()
+        departmentCode()
+        address()
+        requestDate()
+        contactNumber()
+        rush()
+        deliveryDate()
     }
 }

@@ -57,14 +57,14 @@
 				</div>
 				</g:if>
 			
-				<g:if test="${pickupInstance?.items}">
+				<g:if test="${pickupInstance?.packingList}">
 					<div class="row">
                        <div class="col-sm-6">
-                           <label for="items">
-                             <g:message code="pickup.items.label" default="Items" />
+                           <label for="packingList">
+                             <g:message code="pickup.packingList.label" default="packingList" />
 							</label>
-						<g:each in="${pickupInstance.items}" var="i">
-						<span class="form-control" aria-labelledby="items-label"><g:link controller="item" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></span>
+						<g:each in="${pickupInstance.packingList}" var="i">
+						<span class="form-control" aria-labelledby="packingList-label"><g:link controller="PackingList" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></span>
 
 						</g:each>
 					

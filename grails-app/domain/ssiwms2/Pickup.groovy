@@ -8,8 +8,9 @@ class Pickup {
     Date requestDate
     String phone
     Date pickupDate
+    String rush
 
-    static hasMany =[items:Item]
+    static hasMany =[packingList:PackingList]
     static constraints = {
 
     }

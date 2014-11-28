@@ -1,7 +1,7 @@
 <%@ page import="ssiwms2.Pickup" %>
 
 
-	<div class = "row">
+	<div class = "row" xmlns="http://www.w3.org/1999/html">
 		<div class = "col-sm-6">
 
 				<div class="fieldcontain ${hasErrors(bean: pickupInstance, field: 'clientCode', 'error')} required">
@@ -61,6 +61,14 @@
 		</div>
 	</div>
 
+<div class = "row">
+	<div class = "col-sm-12">
+
+		<h1></h1>
+
+	</div>
+</div>
+
 	<div class = "row">
 		<div class = "col-sm-6">
 
@@ -112,8 +120,8 @@
 
 	<div class = "col-sm-6">
 
-		<div class="fieldcontain">
-			<label for="notify">
+		<div class="fieldcontain" ${hasErrors(bean: pickupInstance, field: 'rush', 'error')}">
+			<label for="rush">
 				Rush?
 				<g:radioGroup name="rush"
 							  labels="['Yes','No']"
@@ -140,64 +148,77 @@
 	</div>
 </div>
 
+
+
+
 <div class="panel panel-default">
-	<div class="panel-heading"><h4><g:message code="Items To Pickup" args="Items to Pickup" /></h4></div>
+
+	<div class="panel-heading"><h5><g:message code="Items To Pickup" args="Items to Pickup" /></h5></div>
+
 	<div class="panel-body">
-		<div id="list-item" class="content scaffold-list" role="main">
+
+		<div class="fieldcontain ${hasErrors(bean: pickupInstance, field: 'packingList', 'error')} ">
+			<g:each in="${pickupInstance?.packingList?}" var="u">
+				<g:link controller="PackingList" action="show" id="${u.id}">${u?.encodeAsHTML()}</g:link>
+			</g:each>
+			<g:link class="btn btn-default btn-sm" controller="PackingList" action="create" params="['pickup.id': pickupInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'Items', default: 'Items')])}</g:link>
+			<h3></h3>
+		</div>
+
+		<div id="list-packingList" class="content scaffold-list" role="main">
+
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="fieldcontain ${hasErrors(bean: pickupInstance, field: 'items', 'error')} ">
-						<g:each in="${pickupInstance?.items?}" var="i">
-							<g:link controller="item" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link>
-						</g:each>
-						<g:link controller="item" action="create" params="['pickup.id': pickupInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'item.label', default: 'Item')])}</g:link>
-					</div>
-				</div>
-			</div>
+
 			<table class="table table-bordered table-hover">
 				<thead class="th">
 				<tr>
 
-					<g:sortableColumn class="small" property="barCode" title="${message(code: 'item.barCode.label', default: 'Bar Code')}" />
+					<g:sortableColumn class="small" property="barCode"
+									  title="${message(code: 'packingList.barCode.label', default: 'Bar Code')}"/>
 
-					<g:sortableColumn class="small" property="batchCode" title="${message(code: 'item.batchCode.label', default: 'Batch Code')}" />
+					<g:sortableColumn class="small" property="batchCode"
+									  title="${message(code: 'packingList.batchCode.label', default: 'Batch Code')}"/>
 
-					<g:sortableColumn class="small" property="department" title="${message(code: 'Department', default: 'Department')}" />
+					<g:sortableColumn class="small" property="description"
+									  title="${message(code: 'packingList.description.label', default: 'Description')}"/>
 
-					<g:sortableColumn class="small" property="description" title="${message(code: 'item.description.label', default: 'Description')}" />
+					<g:sortableColumn class="small" property="retention"
+									  title="${message(code: 'packingList.retention.label', default: 'Retention')}"/>
 
-					<g:sortableColumn class="small" property="itemID" title="${message(code: 'item.itemID.label', default: 'Item ID')}" />
+					<g:sortableColumn class="small" property="department"
+									  title="${message(code: 'packingList.department.label', default: 'Department')}"/>
 
-					<g:sortableColumn class="small" property="locationCode" title="${message(code: 'item.locationCode.label', default: 'Location Code')}" />
-
+					<g:sortableColumn class="small" property="status"
+									  title="${message(code: 'packingList.status.label', default: 'Status')}"/>
 
 				</tr>
 				</thead>
 				<tbody>
-				<g:each in="${itemInstanceList}" status="i" var="itemInstance">
+				<g:each in="${packingListInstanceList}" status="i" var="packingListInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
-						<td><g:link action="show" id="${itemInstance.id}">${fieldValue(bean: itemInstance, field: "barCode")}</g:link></td>
+						<td><g:link action="show"
+									id="${packingListInstance.id}">${fieldValue(bean: packingListInstance, field: "barCode")}</g:link></td>
 
-						<td>${fieldValue(bean: itemInstance, field: "batchCode")}</td>
+						<td>${fieldValue(bean: packingListInstance, field: "batchCode")}</td>
 
-						<td>${fieldValue(bean: itemInstance, field: "department")}</td>
+						<td>${fieldValue(bean: packingListInstance, field: "description")}</td>
 
-						<td>${fieldValue(bean: itemInstance, field: "description")}</td>
+						<td><g:formatDate date="${packingListInstance.retention}"/></td>
 
-						<td>${fieldValue(bean: itemInstance, field: "itemID")}</td>
+						<td>${fieldValue(bean: packingListInstance, field: "department")}</td>
 
-						<td>${fieldValue(bean: itemInstance, field: "locationCode")}</td>
+						<td>${fieldValue(bean: packingListInstance, field: "status")}</td>
+
 					</tr>
-
 				</g:each>
 				</tbody>
 			</table>
+
 			<div class="pagination">
-				<g:paginate total="${itemInstanceCount ?: 0}" />
+				<g:paginate total="${packingListInstanceCount ?: 0}"/>
 			</div>
 		</div>
 
