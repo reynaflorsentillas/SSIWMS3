@@ -27,52 +27,50 @@
 					<g:if test="${flash.message}">
 					<div class="message" role="status">${flash.message}</div>
 					</g:if>
+
 					<table class="table table-bordered table-hover">
-					<thead class="th">
-					<tr>
+						<thead class="th">
+							<tr>
 
-						<g:sortableColumn class="small" property="clientCode" title="${message(code: 'pickup.clientCode.label', default: 'Company Name')}" />
+								<g:sortableColumn class="small" property="clientCode" title="${message(code: 'pickup.clientCode.label', default: 'Company Name')}" />
 
-						<g:sortableColumn class="small" property="requesterName" title="${message(code: 'pickup.requesterName.label', default: 'Name Of Requester')}" />
+								<g:sortableColumn class="small" property="requesterName" title="${message(code: 'pickup.requesterName.label', default: 'Name Of Requester')}" />
 
-						<g:sortableColumn class="small" property="address" title="${message(code: 'pickup.address.label', default: 'Address')}" />
+								<g:sortableColumn class="small" property="address" title="${message(code: 'pickup.address.label', default: 'Address')}" />
 
-						<g:sortableColumn class="small" property="phone" title="${message(code: 'Contact Number', default: 'Contact Number')}" />
+								<g:sortableColumn class="small" property="phone" title="${message(code: 'Contact Number', default: 'Contact Number')}" />
 
-						<g:sortableColumn class="small" property="departmentCode" title="${message(code: 'pickup.departmentCode.label', default: 'Department Code')}" />
+								<g:sortableColumn class="small" property="departmentCode" title="${message(code: 'pickup.departmentCode.label', default: 'Department Code')}" />
 
-						<g:sortableColumn class="small" property="pickupDate" title="${message(code: 'pickup.pickupDate.label', default: 'Pickup Date')}" />
+								<g:sortableColumn class="small" property="pickupDate" title="${message(code: 'pickup.pickupDate.label', default: 'Pickup Date')}" />
 
-						<g:sortableColumn class="small" property="requestDate" title="${message(code: 'pickup.requestDate.label', default: 'Request Date')}" />
+								<g:sortableColumn class="small" property="requestDate" title="${message(code: 'pickup.requestDate.label', default: 'Request Date')}" />
 
-					</tr>
-					</thead>
-					<tbody>
-					<g:each in="${pickupInstanceList}" status="i" var="pickupInstance">
-						<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+							</tr>
+						</thead>
+						<tbody>
+						<g:each in="${pickupInstanceList}" status="i" var="pickupInstance">
+							<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
-						<td><g:link action="show" id="${pickupInstance.id}">${fieldValue(bean: pickupInstance, field: "clientCode")}</g:link></td>
+								<td><g:link action="show" id="${pickupInstance.id}">${fieldValue(bean: pickupInstance, field: "clientCode")}</g:link></td>
 
-						<td>${fieldValue(bean: pickupInstance, field: "requesterName")}</td>
+								<td>${fieldValue(bean: pickupInstance, field: "requesterName")}</td>
 
-						<td>${fieldValue(bean: pickupInstance, field: "address")}</td>
+								<td>${fieldValue(bean: pickupInstance, field: "address")}</td>
 
-						<td>${fieldValue(bean: pickupInstance, field: "phone")}</td>
+								<td>${fieldValue(bean: pickupInstance, field: "phone")}</td>
 
-						<td>${fieldValue(bean: pickupInstance, field: "departmentCode")}</td>
+								<td>${fieldValue(bean: pickupInstance, field: "departmentCode")}</td>
 
-						<td>${fieldValue(bean: pickupInstance, field: "pickupDate")}</td>
+								<td>${fieldValue(bean: pickupInstance, field: "pickupDate")}</td>
 
-						<td>${fieldValue(bean: pickupInstance, field: "requestDate")}</td>
+								<td>${fieldValue(bean: pickupInstance, field: "requestDate")}</td>
 
-						</tr>
-					</g:each>
-					</tbody>
+							</tr>
+						</g:each>
+						</tbody>
 					</table>
-			<fieldset class="button"">
-					<g:submitButton name="create" class="btn btn-danger" value="test"></g:submitButton>
-					<g:submitButton name="create" class="btn btn-success" value="test2"></g:submitButton>
-			</fieldset>
+				</div>
 			</div>
 		</div>
 	</body>
