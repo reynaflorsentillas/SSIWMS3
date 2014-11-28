@@ -2,7 +2,7 @@
 
 
 <div class="row">
-	<div class = "col-sm-4">
+	<div class = "col-sm-12">
 				<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'clientCode', 'error')} required">
 					<label for="clientCode">
 						<g:message class="label" code="client.clientCode.label" default="Client Code" />
@@ -21,6 +21,7 @@
 	</div>
 </div>
 
+<h1></h1>
 
 		<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'dept', 'error')} ">
 			<label for="dept">

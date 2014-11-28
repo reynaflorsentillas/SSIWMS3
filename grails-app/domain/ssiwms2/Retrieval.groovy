@@ -12,13 +12,6 @@ class Retrieval {
 
     static hasMany =[pickList:PickLIst]
     static constraints = {
-        companyName()
-        requesterName()
-        departmentCode()
-        address()
-        requestDate()
-        contactNumber()
-        rush()
-        deliveryDate()
+
     }
 }

@@ -9,6 +9,7 @@
 				<span class="required-indicator">*</span>
 			</label>
 			<g:select optionKey="clientCode" optionValue="clientName" name="clientCode" from="${ssiwms2.Client.list()}"/>
+
 		</div>
 	</div>
 
@@ -25,6 +26,7 @@
 			</div>
 		</div>
 </div>
+
 
 <div class="row">
 	<div class="col-sm-12">
@@ -56,6 +58,11 @@
 
 </div>
 
+<div class="row">
+	<div class="col-sm-12">
+		<h1></h1>
+	</div>
+</div>
 
 <div class="row">
 	<div class="col-sm-6">

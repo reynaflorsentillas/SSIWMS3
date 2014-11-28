@@ -7,12 +7,12 @@
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
-
-<div class="panel panel-default">
+	<div class="panel panel-default">
 
 
 			<div class="panel-heading">
-				<h1><g:message code="default.edit.label" args="[entityName]" /></h1></div>
+				<h4>Edit Department</h4>
+			</div>
 		<div id="edit-department" class="content scaffold-edit" role="main">
 			<div class="panel-body">
 			<div class="nav" role="navigation">
@@ -39,12 +39,13 @@
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
+				<h1></h1>
 				<fieldset class="buttons">
 					<g:actionSubmit class="btn btn-warning" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
 				</fieldset>
 			</g:form>
 		</div>
 		</div>
-</div>
+	</div>
 	</body>
 </html>

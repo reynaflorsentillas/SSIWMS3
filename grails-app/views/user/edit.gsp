@@ -7,7 +7,11 @@
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
-
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4>user</h4>
+		</div>
+		<div class="panel-body">
 		<div id="edit-User" class="content scaffold-edit" role="main">
 			<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
 			<div class="nav" role="navigation">
@@ -38,6 +42,8 @@
 					<h3></h3>
 				</fieldset>
 			</g:form>
+		</div>
+			</div>
 		</div>
 	</body>
 </html>

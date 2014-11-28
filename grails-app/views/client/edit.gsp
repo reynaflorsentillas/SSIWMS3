@@ -9,7 +9,7 @@
 	<body>
 	<div class="panel panel-default">
 	<div class="panel-heading">
-		<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+		<h4>Edit Client</h4>
 	</div>
 		<div class="panel-body">
 		<div class="nav" role="navigation">

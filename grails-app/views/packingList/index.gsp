@@ -70,11 +70,6 @@
         </g:each>
         </tbody>
     </table>
-    <fieldset class="button"">
-        <g:submitButton name="create" class="btn btn-danger" value="test"></g:submitButton>
-        <g:submitButton name="create" class="btn btn-success" value="test2"></g:submitButton>
-    </fieldset>
-
 
     </div>
 </div>

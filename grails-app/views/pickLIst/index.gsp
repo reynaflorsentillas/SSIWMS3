@@ -1,28 +1,29 @@
-
 <%@ page import="ssiwms2.PickLIst" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'pickLIst.label', default: 'PickLIst')}" />
+		<g:set var="entityName" value="${message(code: 'pickLIst.label', default: 'Pick')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-pickLIst" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="list-pickLIst" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
+		<div class= "panel panel-default">
+			<div class="panel-heading">
+				<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			</div>
+			<div class="panel-body">
+				<div class="nav" role="navigation">
+					<fieldset ="buttons">
+						<g:link class="btn btn-default btn-sm" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+					<h4></h4>
+				</fieldset>
+				</div>
+					<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
+			<table class="table table-bordered table-hover">
+			<thead class="th">
+					<tr class="small">
 					
 						<g:sortableColumn property="barCode" title="${message(code: 'pickLIst.barCode.label', default: 'Bar Code')}" />
 					
@@ -58,9 +59,15 @@
 				</g:each>
 				</tbody>
 			</table>
+				<fieldset class="buttons">
+					<g:submitButton name="create"  class="btn btn-danger" value="test"></g:submitButton>
+					<g:submitButton name="create" class="btn btn-success" value="test2"></g:submitButton>
+				</fieldset>
 			<div class="pagination">
 				<g:paginate total="${pickLIstInstanceCount ?: 0}" />
 			</div>
-		</div>
+				</div>
+			</div>
+
 	</body>
 </html>
