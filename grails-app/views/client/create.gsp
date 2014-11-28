@@ -6,7 +6,11 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4>Create Client</h4>
+		</div>
+		<div class="panel-body">
 		<div class="nav" role="navigation">
 			<fieldset class="buttons">
 				<g:link class="btn btn-default btn-sm" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link>
@@ -34,5 +38,7 @@
 				</fieldset>
 			</g:form>
 		</div>
+		</div>
+	</div>
 	</body>
 </html>

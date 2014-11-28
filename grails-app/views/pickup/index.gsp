@@ -69,10 +69,10 @@
 					</g:each>
 					</tbody>
 					</table>
-				</div>
-			</div>
-			<div class="pagination">
-				<g:paginate total="${pickupInstanceCount ?: 0}" />
+			<fieldset class="button"">
+					<g:submitButton name="create" class="btn btn-danger" value="test"></g:submitButton>
+					<g:submitButton name="create" class="btn btn-success" value="test2"></g:submitButton>
+			</fieldset>
 			</div>
 		</div>
 	</body>

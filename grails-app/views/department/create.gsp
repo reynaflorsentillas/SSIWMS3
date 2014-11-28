@@ -6,16 +6,20 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
+<div class="panel panel-default">
 
-
-		<div id="create-department" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+			<div class="panel-heading">
+				<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+			</div>
+			<div class="panel-body">
 			<div class="nav" role="navigation">
 				<fieldset class="buttons">
 					<g:link class="btn btn-default btn-sm" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link>
 					<h3></h3>
 				</fieldset>
 			</div>
+
+
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -34,6 +38,8 @@
 					<g:submitButton name="create" class="btn btn-success" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 				</fieldset>
 			</g:form>
-		</div>
+			</div>
+			</div>
+
 	</body>
 </html>

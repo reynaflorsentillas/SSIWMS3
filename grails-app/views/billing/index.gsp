@@ -15,11 +15,10 @@
 		<div class="panel-body">
 
 		<div id="list-billing" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-
 			<div class="nav" role="navigation">
 				<fieldset class="buttons">
 					<g:link class="btn btn-default btn-sm" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+					<h1></h1>
 				</fieldset>
 			</div>
 

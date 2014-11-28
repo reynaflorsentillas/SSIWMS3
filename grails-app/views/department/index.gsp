@@ -7,28 +7,37 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-		<div class="nav" role="navigation">
-			<fieldset class="buttons">
-				<g:link class="btn btn-default btn-sm" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
-				<h3></h3>
-			</fieldset>
+	<div class="panel panel-default">
+	
+		<div class ="panel-heading">
+			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 		</div>
+
+		<div class="panel-body">
+			<div class="nav" role="navigation">
+		<fieldset class="buttons">
+			<g:link class="btn btn-default btn-sm" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+			<h3></h3>
+		</fieldset>
+				</div>
+
 		<div id="list-department" class="content scaffold-list" role="main">
-			<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<table class="table table-bordered table-hover">
+
+		<g:if test="${flash.message}">
+			<div class="message" role="status">${flash.message}</div>
+		</g:if>
+
+		<table class="table table-bordered table-hover">
 			<thead class="th">
 					<tr>
 						<g:sortableColumn class="small" property="client" title="${message(code: 'department.client.label', default: 'Client')}"/>
-					
+
 						<g:sortableColumn class="small" property="clientCode" title="${message(code: 'department.clientCode.label', default: 'Client Code')}" />
-					
+
 						<g:sortableColumn class="small" property="departmentCode" title="${message(code: 'department.departmentCode.label', default: 'Department Code')}" />
-					
+
 						<g:sortableColumn class="small" property="departmentName" title="${message(code: 'department.departmentName.label', default: 'Department Name')}" />
-					
+
 					</tr>
 				</thead>
 				<tbody>
@@ -36,20 +45,29 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 						<div class="td">
 							<td ><g:link action="show" id="${departmentInstance.id}">${fieldValue(bean: departmentInstance, field: "client")}</g:link></td>
-					
+
 							<td>${fieldValue(bean: departmentInstance, field: "clientCode")}</td>
-					
+
 							<td>${fieldValue(bean: departmentInstance, field: "departmentCode")}</td>
-					
+
 							<td>${fieldValue(bean: departmentInstance, field: "departmentName")}</td>
 						</div>
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
-			<div class="pagination">
-				<g:paginate total="${departmentInstanceCount ?: 0}" />
-			</div>
+			<fieldset class="buttons">
+				<g:submitButton name="create"  class="btn btn-danger" value="test"></g:submitButton>
+				<g:submitButton name="create" class="btn btn-success" value="test2"></g:submitButton>
+			</fieldset>
+
 		</div>
+	</div>
+</div>
+		<div class="pagination">
+			<g:paginate total="${departmentInstanceCount ?: 0}" />
+		</div>
+	</div>
+
 	</body>
 </html>

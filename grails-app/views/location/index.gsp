@@ -1,4 +1,3 @@
-
 <%@ page import="ssiwms2.Location" %>
 <!DOCTYPE html>
 <html>
@@ -8,19 +7,25 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-location" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4>Location</h4>
 		</div>
-		<div id="list-location" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+		<div class="panel-body">
+			<div class="nav" role="navigation">
+				<fieldset class ="buttons">
+					<g:link class="btn btn-default btn-sm" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+					<h3></h3>
+				</fieldset>
+			</div>
+
+			<div id="list-pickup" class="content scaffold-list" role="main">
+
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
+			<table class="table table-bordered">
 			<thead>
 					<tr>
 					
@@ -50,8 +55,12 @@
 				</g:each>
 				</tbody>
 			</table>
-			<div class="pagination">
-				<g:paginate total="${locationInstanceCount ?: 0}" />
+				<fieldset class="button"">
+			<g:submitButton name="create" class="btn btn-danger" value="test"></g:submitButton>
+			<g:submitButton name="create" class="btn btn-success" value="test2"></g:submitButton>
+			</fieldset>
+
+
 			</div>
 		</div>
 	</body>

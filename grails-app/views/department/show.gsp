@@ -8,9 +8,13 @@
 	</head>
 	<body>
 
+	<div class="panel panel-default">
+	<div class="panel-heading">
 
-		<div id="show-department" class="content scaffold-show" role="main">
 			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			</div>
+		<div class="panel-body">
+			<div id="show-department" class="content scaffold-show" role="main">
 			<div class="nav" role="navigation">
 				<fieldset class="buttons">
 					<g:link class="btn btn-default btn-sm" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link>
@@ -18,6 +22,7 @@
 					<h3></h3>
 				</fieldset>
 			</div>
+		</div>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -102,5 +107,7 @@
 				</fieldset>
 			</g:form>
 		</div>
+		</div>
+	</div>
 	</body>
 </html>

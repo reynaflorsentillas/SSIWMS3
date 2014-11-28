@@ -8,8 +8,11 @@
 				<g:message code="location.item.label" default="Item" />
 				<span class="required-indicator">*</span>
 			</label>
-			<g:select id="item" name="item.id" from="${ssiwms2.Item.list()}" optionKey="id" required="" value="${locationInstance?.item?.id}" class="many-to-one"/>
-
+			<ui:multiSelect name="item.id"
+							from="${ssiwms2.Item.list()}"
+							value="${locationInstance?.item?.id}"
+							noSelection="['':'Select One']"
+			/>
 		</div>
 	</div>
 </div>

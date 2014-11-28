@@ -49,8 +49,8 @@
 					<g:link controller="user" action="create" params="['client.id': clientInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'user.label', default: 'User')])}</g:link>
 				</li>
 			</ul>
-
 		</div>
+
 
 
 

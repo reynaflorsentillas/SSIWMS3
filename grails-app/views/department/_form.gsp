@@ -1,6 +1,5 @@
 <%@ page import="ssiwms2.Department" %>
 
-
 <div class="row">
 	<div class="col-sm-4">
 		<div class="fieldcontain ${hasErrors(bean: departmentInstance, field: 'client', 'error')} required">
@@ -8,7 +7,7 @@
 				<g:message code="department.client.label" default="Client" />
 				<span class="required-indicator">*</span>
 			</label>
-			<g:select id="client" name="client.id" from="${ssiwms2.Client.list()}" optionKey="id" required="" value="${departmentInstance?.client?.id}" class="many-to-one"/>
+			<ui:multiSelect id="client" name="client.id" from="${ssiwms2.Client.list()}" optionKey="id"  value="${departmentInstance?.client?.id}"/>
 
 		</div>
 	</div>
