@@ -49,7 +49,7 @@
 							</tr>
 						</thead>
 						<tbody>
-						<g:each in="${pickupInstanceList}" status="i" var="pickupInstance">
+							<g:each in="${pickupInstanceList}" status="i" var="pickupInstance">
 							<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
 								<td><g:link action="show" id="${pickupInstance.id}">${fieldValue(bean: pickupInstance, field: "clientCode")}</g:link></td>
@@ -67,7 +67,7 @@
 								<td>${fieldValue(bean: pickupInstance, field: "requestDate")}</td>
 
 							</tr>
-						</g:each>
+							</g:each>
 						</tbody>
 					</table>
 				</div>
