@@ -9,7 +9,8 @@
 						<g:message code="Company Name" default="Company Name" />
 						<span class="required-indicator">*</span>
 					</label>
-						<g:textField class = "form-control"  name="clientCode" required="" value="${pickupInstance?.clientCode}"/>
+						<g:select optionKey="clientCode" optionValue="clientName" name="clientCode" from="${ssiwms2.Client.list()}"/>
+
 				</div>
 
 		</div>
@@ -26,6 +27,13 @@
 		</div>
 	</div>
 
+<div class = "row">
+	<div class = "col-sm-12">
+
+		<h1></h1>
+
+	</div>
+</div>
 
 	<div class = "row">
 		<div class = "col-sm-6">
@@ -44,7 +52,7 @@
 
 			<div class="fieldcontain ${hasErrors(bean: pickupInstance, field: 'departmentCode', 'error')} required">
 				<label for="departmentCode">
-					<g:message code="pickup.departmentCode.label" default="Department Code" />
+					<g:message code="Department" default="Department" />
 					<span class="required-indicator">*</span>
 				</label>
 				<g:textField class = "form-control" name="departmentCode" required="" value="${pickupInstance?.departmentCode}"/>
@@ -68,12 +76,12 @@
 
 		<div class = "col-sm-6">
 
-			<div class="fieldcontain ${hasErrors(bean: pickupInstance, field: 'contactNumber', 'error')} required">
-				<label for="contactNumber">
-					<g:message code="pickup.contactNumber.label" default="Contact Number" />
+			<div class="fieldcontain ${hasErrors(bean: pickupInstance, field: 'phone', 'error')} required">
+				<label for="phone">
+					<g:message code="Contact Number" default="Contact Number" />
 					<span class="required-indicator">*</span>
 				</label>
-				<g:field class = "form-control" name="contactNumber" type="number" value="${pickupInstance.contactNumber}" required=""/>
+				<g:field class = "form-control" name="phone" value="${pickupInstance.phone}" required=""/>
 			</div>
 
 		</div>
@@ -157,7 +165,7 @@
 
 					<g:sortableColumn class="small" property="batchCode" title="${message(code: 'item.batchCode.label', default: 'Batch Code')}" />
 
-					<g:sortableColumn class="small" property="department" title="${message(code: 'item.department.label', default: 'Department')}" />
+					<g:sortableColumn class="small" property="department" title="${message(code: 'Department', default: 'Department')}" />
 
 					<g:sortableColumn class="small" property="description" title="${message(code: 'item.description.label', default: 'Description')}" />
 

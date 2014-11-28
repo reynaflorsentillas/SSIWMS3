@@ -6,7 +6,7 @@ class Pickup {
     String departmentCode
     String address
     Date requestDate
-    Integer contactNumber
+    String phone
     Date pickupDate
 
     static hasMany =[items:Item]

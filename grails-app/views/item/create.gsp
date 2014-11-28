@@ -10,6 +10,7 @@
 		<div class="nav" role="navigation">
 
 			<g:link class="btn btn-default btn-sm" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link>
+			<h3></h3>
 
 		</div>
 		<div id="create-item" class="content scaffold-create" role="main">
@@ -29,7 +30,7 @@
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+					<g:submitButton name="create" class="btn btn-success" value="${message(code: 'Add Item', default: 'Add Item')}" />
 				</fieldset>
 			</g:form>
 		</div>

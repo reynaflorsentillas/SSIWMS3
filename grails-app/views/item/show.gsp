@@ -58,15 +58,7 @@
 					
 				</li>
 				</g:if>
-			
-				<g:if test="${itemInstance?.itemID}">
-				<li class="fieldcontain">
-					<span id="itemID-label" class="property-label"><g:message code="item.itemID.label" default="Item ID" /></span>
-					
-						<span class="property-value" aria-labelledby="itemID-label"><g:fieldValue bean="${itemInstance}" field="itemID"/></span>
-					
-				</li>
-				</g:if>
+
 			
 				<g:if test="${itemInstance?.location}">
 				<li class="fieldcontain">
@@ -84,15 +76,6 @@
 					<span id="locationCode-label" class="property-label"><g:message code="item.locationCode.label" default="Location Code" /></span>
 					
 						<span class="property-value" aria-labelledby="locationCode-label"><g:fieldValue bean="${itemInstance}" field="locationCode"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${itemInstance?.packinglistNo}">
-				<li class="fieldcontain">
-					<span id="packinglistNo-label" class="property-label"><g:message code="item.packinglistNo.label" default="Packinglist No" /></span>
-					
-						<span class="property-value" aria-labelledby="packinglistNo-label"><g:fieldValue bean="${itemInstance}" field="packinglistNo"/></span>
 					
 				</li>
 				</g:if>

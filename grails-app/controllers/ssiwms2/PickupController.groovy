@@ -12,6 +12,9 @@ class PickupController {
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Pickup.list(params), model: [pickupInstanceCount: Pickup.count()]
+
+        def allClient = Client.list()
+        [allClient: allClient]
     }
 
     def show(Pickup pickupInstance) {
@@ -20,6 +23,7 @@ class PickupController {
 
     def create() {
         respond new Pickup(params)
+
     }
 
     @Transactional

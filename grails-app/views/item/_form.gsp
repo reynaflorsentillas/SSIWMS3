@@ -9,6 +9,7 @@
 				<span class="required-indicator">*</span>
 			</label>
 			<g:textField class = "form-control" name="batchCode" required="" value="${itemInstance?.batchCode}"/>
+		</div>
 	</div>
 </div>
 
@@ -24,6 +25,29 @@
 	</div>
 </div>
 
+<div class="row">
+	<div class = "col-sm-6">
+	<h3></h3>
+	</div>
+</div>
+
+<div class = "row">
+	<div class = "col-sm-6">
+		<div class="fieldcontain ${hasErrors(bean: itemInstance, field: 'retention', 'error')} required">
+			<label for="retention">
+				<g:message code="item.retention.label" default="Retention" />
+				<span class="required-indicator">*</span>
+			</label>
+			<calendar:datePicker name="retention" defaultValue="${new Date()}" value="${itemInstance?.retention}"/>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class = "col-sm-6">
+		<h3></h3>
+	</div>
+</div>
 
 <div class = "row">
 	<div class = "col-sm-6">
@@ -35,7 +59,6 @@
 			<g:textField class = "form-control" name="department" required="" value="${itemInstance?.department}"/>
 		</div>
 	</div>
-		`
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: itemInstance, field: 'location', 'error')} ">
@@ -55,20 +78,6 @@
 
 </div>
 
-<div class = "row">
-	<div class = "col-sm-3 ">
-		<div class="fieldcontain ${hasErrors(bean: itemInstance, field: 'itemID', 'error')} required">
-			<label for="itemID">
-				<g:message code="item.itemID.label" default="Item ID" />
-				<span class="required-indicator">*</span>
-			</label>
-			<g:field class = "form-control" name="itemID" type="number" value="${itemInstance.itemID}" required=""/>
-
-		</div>
-	</div>
-
-
-
 
 </div>
 <div class="fieldcontain ${hasErrors(bean: itemInstance, field: 'pickup', 'error')} required">
@@ -80,15 +89,13 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: itemInstance, field: 'retention', 'error')} required">
-	<label for="retention">
-		<g:message code="item.retention.label" default="Retention" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="retention" precision="day"  value="${itemInstance?.retention}"  />
-
+<div class="row">
+	<div class = "col-sm-6">
+		<h3></h3>
+	</div>
 </div>
 
+<%--
 <div class="fieldcontain ${hasErrors(bean: itemInstance, field: 'retrieval', 'error')} required">
 	<label for="retrieval">
 		<g:message code="item.retrieval.label" default="Retrieval" />
@@ -97,7 +104,7 @@
 	<g:select id="retrieval" name="retrieval.id" from="${ssiwms2.Retrieval.list()}" optionKey="id" required="" value="${itemInstance?.retrieval?.id}" class="many-to-one"/>
 
 </div>
-
+--%>
 
 
 

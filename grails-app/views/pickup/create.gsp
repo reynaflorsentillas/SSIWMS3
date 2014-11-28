@@ -8,10 +8,10 @@
 	<body>
 		<h1><g:message code="Request for Pickup" args="[entityName]" /></h1>
 		<div class="nav" role="navigation">
-			<fieldset class="buttons">
+
 				<g:link class="btn btn-default btn-sm" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link>
 				<h3></h3>
-			</fieldset>
+
 		</div>
 		<div id="create-pickup" class="content scaffold-create" role="main">
 			<g:if test="${flash.message}">
@@ -31,7 +31,7 @@
 							<g:render template="form"/>
 						</fieldset>
 						<fieldset class="buttons">
-							<g:submitButton name="create" class="btn btn-success btn-lg" value="${message(code: 'Submit', default: 'Submit')}" />
+							<g:submitButton name="create" class="btn btn-success" value="${message(code: 'Submit', default: 'Submit')}" />
 						</fieldset>
 					</g:form>
 				</div>

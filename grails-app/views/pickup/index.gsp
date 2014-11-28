@@ -7,6 +7,9 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
+
+
+	<div id="list-pickup" class="content scaffold-list" role="main">
 	<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 		<div class="nav" role="navigation">
 			<fieldset class ="buttons">
@@ -14,7 +17,6 @@
 				<h3></h3>
 		</fieldset>
 		</div>
-		<div id="list-pickup" class="content scaffold-list" role="main">
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -28,7 +30,7 @@
 
 						<g:sortableColumn class="small" property="address" title="${message(code: 'pickup.address.label', default: 'Address')}" />
 
-						<g:sortableColumn class="small" property="contactNumber" title="${message(code: 'pickup.contactNumber.label', default: 'Contact Number')}" />
+						<g:sortableColumn class="small" property="phone" title="${message(code: 'Contact Number', default: 'Contact Number')}" />
 
 						<g:sortableColumn class="small" property="departmentCode" title="${message(code: 'pickup.departmentCode.label', default: 'Department Code')}" />
 
@@ -48,7 +50,7 @@
 
 						<td>${fieldValue(bean: pickupInstance, field: "address")}</td>
 
-						<td>${fieldValue(bean: pickupInstance, field: "contactNumber")}</td>
+						<td>${fieldValue(bean: pickupInstance, field: "phone")}</td>
 
 						<td>${fieldValue(bean: pickupInstance, field: "departmentCode")}</td>
 
