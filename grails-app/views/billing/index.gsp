@@ -8,13 +8,21 @@
 	</head>
 	<body>
 
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4>Billing</h4>
+		</div>
+		<div class="panel-body">
+
 		<div id="list-billing" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+
 			<div class="nav" role="navigation">
 				<fieldset class="buttons">
-					<g:link class="btn-default" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+					<g:link class="btn btn-default btn-sm" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
 				</fieldset>
 			</div>
+
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -56,9 +64,16 @@
 				</g:each>
 				</tbody>
 			</table>
+
+			<fieldset class="button"">
+		<g:submitButton name="create" class="btn btn-danger" value="test"></g:submitButton>
+		<g:submitButton name="create" class="btn btn-success" value="test2"></g:submitButton>
+		</fieldset>
+
 			<div class="pagination">
 				<g:paginate total="${billingInstanceCount ?: 0}" />
 			</div>
 		</div>
+			</div>
 	</body>
 </html>

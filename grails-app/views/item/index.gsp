@@ -7,20 +7,26 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-	<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-		<div class="nav" role="navigation">
-			<fieldset class="button">
-				<g:link class="btn btn-default btn-sm" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
-				<h3></h3>
-			</fieldset>
-		</div>
-		<div id="list-item" class="content scaffold-list" role="main">
 
-			<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<table class="table table-bordered table-hover">
-			<thead class="th">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4>ITEMS</h4>
+		</div>
+
+		<div class="panel-body">
+			<div class="nav" role="navigation">
+				<fieldset class="button">
+					<g:link class="btn btn-default btn-sm" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+					<h3></h3>
+				</fieldset>
+			</div>
+			<div id="list-item" class="content scaffold-list" role="main">
+
+				<g:if test="${flash.message}">
+					<div class="message" role="status">${flash.message}</div>
+				</g:if>
+				<table class="table table-bordered table-hover">
+				<thead class="th">
 					<tr>
 
 						<g:sortableColumn class="small" property="batchCode" title="${message(code: 'Box Number', default: 'Box Number')}" />
@@ -49,8 +55,11 @@
 				</g:each>
 				</tbody>
 			</table>
-			<div class="pagination">
-				<g:paginate total="${itemInstanceCount ?: 0}" />
+			</div>
+						<fieldset class="button"">
+							<g:submitButton name="create" class="btn btn-danger" value="test"></g:submitButton>
+							<g:submitButton name="create" class="btn btn-success" value="test2"></g:submitButton>
+						</fieldset>
 			</div>
 		</div>
 	</body>

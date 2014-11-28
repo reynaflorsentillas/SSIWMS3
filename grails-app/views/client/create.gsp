@@ -12,7 +12,6 @@
 				<g:link class="btn btn-default btn-sm" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link>
 				<h3></h3>
 			</fieldset>
-
 		</div>
 		<div id="create-client" class="content scaffold-create" role="main">
 
@@ -20,7 +19,7 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<g:hasErrors bean="${clientInstance}">
-			<ul class="errors" role="alert">
+			<ul class="alert" role="alert">
 				<g:eachError bean="${clientInstance}" var="error">
 				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
 				</g:eachError>

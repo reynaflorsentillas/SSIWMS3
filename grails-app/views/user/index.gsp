@@ -8,9 +8,14 @@
 	</head>
 	<body>
 
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4>User</h4>
+		</div>
+			<div class="panel-body">
 				<h1>User List</h1>
-	<div class="nav" role="navigation">
-		<fieldset class="button">
+		<div class="nav" role="navigation">
+			<fieldset class="button">
 				<g:link class="btn btn-default btn-sm" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
 				<h3></h3>
 			</fieldset>
@@ -57,9 +62,18 @@
 				</g:each>
 				</tbody>
 			</table>
+
+			<fieldset class="button"">
+		<g:submitButton name="create" class="btn btn-danger" value="test"></g:submitButton>
+		<g:submitButton name="create" class="btn btn-success" value="test2"></g:submitButton>
+		</fieldset>
+
 			<div class="pagination">
 				<g:paginate total="${userInstanceCount ?: 0}" />
 			</div>
 		</div>
+			</div>
+		</div>
+
 	</body>
 </html>

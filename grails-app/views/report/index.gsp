@@ -3,17 +3,22 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'report.label', default: 'Report')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
+		<title>Report</title>
 	</head>
 	<body>
-		<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4>Report</h4>
+		</div>
+		<div class="panel-body">
+
 		<div class="nav" role="navigation">
 			<fieldset class ="button">
-				<li><g:link class="btn btn-default" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-
+				<g:link class="btn btn-default bnt-sm" action="create"><g:message code="new Report" args="[entityName]" /></g:link>
+	</fieldset>
 		</div>
-		<div id="list-report" class="content scaffold-list" role="main">
+			<div id="list-report" class="content scaffold-list" role="main">
 
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
@@ -48,9 +53,17 @@
 				</g:each>
 				</tbody>
 			</table>
+
+			<fieldset class="button"">
+		<g:submitButton name="create" class="btn btn-danger" value="test"></g:submitButton>
+		<g:submitButton name="create" class="btn btn-success" value="test2"></g:submitButton>
+		</fieldset>
+
 			<div class="pagination">
 				<g:paginate total="${reportInstanceCount ?: 0}" />
 			</div>
 		</div>
+			</div>
+			</div>
 	</body>
 </html>

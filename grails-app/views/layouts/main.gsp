@@ -64,13 +64,13 @@
 					<a class="active" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a>
 				</li>
 				<li>
-					<a href="#">About</a>
+					<a href="#">Reports</a>
 				</li>
 				<li>
-					<a href="#">Services</a>
+					<a href="#">Transactions</a>
 				</li>
 				<li>
-					<a href="#">Contact</a>
+					<a href="#">Logout</a>
 				</li>
 			</ul>
 		</div>

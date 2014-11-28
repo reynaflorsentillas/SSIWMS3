@@ -9,47 +9,52 @@
 <html>
 <head>
     <meta name="layout" content="main">
-    <title>Transaction History</title>
+    <g:set var="entityName" value="${message(code: 'admin.label', default: 'Admin')}" />
+    <title><g:message code="default.list.label" args="[entityName]" /></title>
+
 </head>
 <body>
-<div class="page-header">
-    <h3>Transaction History</h3>
-</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Transaction History</h4>
+    </div
 
-
-
-<%--
-<div class="dropdown">
-         <g:select class="btn btn-default dropdown-toggle" optionKey="clientCode" optionValue="clientName" name="Client.clientName" from="${allClient}" />
-</div>
- --%>
-
-<div class="panel panel-success">
     <div class="panel-body">
-        <table class="table table-bordered table-hover">
-            <thead class="th">
-            <tr>
-                <g:sortableColumn class="small" property="companyName" title="Company Name" />
-                <g:sortableColumn class="small" property="requesterName" title="Requester Name" />
-                <g:sortableColumn class="small" property="transactionType" title="Transaction Type" />
-                <g:sortableColumn class="small" property="dateOfTransactionType" title="Date of Transaction Type" />
-                <g:sortableColumn class="small" property="status" title="Status" />
+        <div class="nav" role="navigation">
+            <table class="table table-bordered table-hover">
+                <thead class="th">
+        </div>
+        <div id="list-admin" class="content scaffold-list" role="main">
 
-            </tr>
-            </thead>
-            <tbody>
-            <g:each in="${allPickup}" var="thisPickup">
-                <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                    <td>${thisPickup.clientCode}</td>
-                    <td>${thisPickup.requesterName}</td>
-                    <td>${thisPickup.transactionType}</td>
-                    <td>${thisPickup.requestDate}</td>
-                    <td>${thisPickup.status}</td>
+            <g:if test="${flash.message}">
+                <div class="message" role="status">${flash.message}</div>
+
+            </g:if>
+            <table class="table table-bordered table-hover">
+                <thead class="th">
+                <tr>
+                    <g:sortableColumn class="small" property="companyName" title="Company Name" />
+                    <g:sortableColumn class="small" property="requesterName" title="Requester Name" />
+                    <g:sortableColumn class="small" property="transactionType" title="Transaction Type" />
+                    <g:sortableColumn class="small" property="dateOfTransactionType" title="Date of Transaction Type" />
+                    <g:sortableColumn class="small" property="status" title="Status" />
 
                 </tr>
-            </g:each>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <g:each in="${allPickup}" var="thisPickup">
+                    <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+                        <td>${thisPickup.clientCode}</td>
+                        <td>${thisPickup.requesterName}</td>
+                        <td>${thisPickup.transactionType}</td>
+                        <td>${thisPickup.requestDate}</td>
+                        <td>${thisPickup.status}</td>
+
+                    </tr>
+                </g:each>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 </body>
