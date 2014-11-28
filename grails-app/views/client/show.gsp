@@ -18,7 +18,7 @@
 		<div id="show-client" role="main">
 
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+			<div class="alert alert-success alert-dismissible" role="status">${flash.message}</div>
 			</g:if>
 
 			
